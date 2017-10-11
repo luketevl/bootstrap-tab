@@ -1,0 +1,75 @@
+<DOCTYPE html>
+<html>
+	  <head>
+		      <meta charset="utf-8">
+		          <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+			      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+			          <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+				      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+				          <title>Tab</title>
+					    </head>
+					      <body>
+						         <div>
+
+								   <!-- Nav tabs -->
+								     <ul class="nav nav-tabs" role="tablist">
+							         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+									     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+							         <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+									     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+							       </ul>
+
+											         <!-- Tab panes -->
+												   <div class="tab-content">
+										       	<div role="tabpanel" class="tab-pane active" id="home">
+														  <ul class="nav nav-tabs" role="tablist">
+																<li role="presentation" class="active"><a href="#home-F2" aria-controls="home-F2" role="tab" data-toggle="tab">Filho 2</a></li>
+																<li role="presentation"><a href="#home-F1" aria-controls="home-F1" role="tab" data-toggle="tab">Filho 1</a></li>
+															 </ul>
+
+											         <!-- Tab panes -->
+															<div class="tab-content">
+												       	<div role="tabpanel" class="tab-pane active" id="home-F1">..F1.</div>
+												       	<div role="tabpanel" class="tab-pane" id="home-F2">..F2.</div>
+														 	</div>
+														</div>
+
+							           <div role="tabpanel" class="tab-pane" id="profile">
+														 <ul class="nav nav-tabs" role="tablist">
+	 														<li role="presentation" class="active"><a href="#profile-filho1" aria-controls="profile-filho1" role="tab" data-toggle="tab">Filho 2</a></li>
+	 														<li role="presentation"><a href="#profile-filho2" aria-controls="profile-filho2" role="tab" data-toggle="tab">Filho 1</a></li>
+	 													 </ul>
+
+	 													 <!-- Tab panes -->
+	 													<div class="tab-content">
+	 														<div role="tabpanel" class="tab-pane active" id="profile-filho1">..PROFILE 1.</div>
+	 														<div role="tabpanel" class="tab-pane" id="profile-filho2">..PROFILE 2.</div>
+	 													</div>
+							           </div>
+									       <div role="tabpanel" class="tab-pane" id="messages">..p.</div>
+							           <div role="tabpanel" class="tab-pane" id="settings">..d.</div>
+										     </div>
+
+							 </div>
+
+  <script type="text/javascript">
+        $(function() {
+		          // Javascript to enable link to tab
+		          var hash = document.location.hash;
+			            if (hash) {
+					                console.log(hash)
+													var hashPai = hash.split('-', 1);
+													$('.nav-tabs li a').removeClass('active');
+													$('a[href='+hashPai+']').parents('.nav-tabs li a').addClass('active');
+							             $('.nav-tabs a[href='+hashPai+']').tab('show');
+													$('.nav-tabs a[href='+hash+']').tab('show');
+								              }
+
+				              // Change hash for page-reload
+				              $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+						                  window.location.hash = e.target.hash;
+								            });
+					              });
+    </script>
+							   </body>
+</html>
